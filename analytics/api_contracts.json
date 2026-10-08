@@ -1,0 +1,28 @@
+{
+  "chat_message_from_ios_to_go": {
+    "description": "Когда пользователь пишет сообщение в ИИ-чат консьержа",
+    "method": "POST",
+    "path": "/api/v1/chat/message",
+    "body": {
+      "user_id": "test_user_ios_123",
+      "message": "Хочу в Сочи в отель с бассейном до 8000 рублей"
+    }
+  },
+  "chat_response_from_go_to_ios": {
+    "description": "Ответ бэкенда: сообщение от ИИ-маскота + массив честно отфильтрованных карточек из Postgres",
+    "status": 200,
+    "body": {
+      "ai_reply": "Отличный выбор! Я нашел для тебя варианты в Сочи, где есть бассейн и цена укладывается в твой бюджет.",
+      "suggested_cards": [
+        {
+          "id": 2,
+          "type": "hotel",
+          "name": "Сочи Парк Отель",
+          "price": 5400.00,
+          "image_url": "https://unsplash.com",
+          "ai_summary": "🤖 ИИ: Огромная зеленая территория, идеален для детей, море близко."
+        }
+      ]
+    }
+  }
+}
