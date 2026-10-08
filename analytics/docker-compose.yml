@@ -1,0 +1,27 @@
+```yaml
+version: '3.8'
+
+services:
+  postgres_db:
+    image: postgres:15-alpine
+    container_name: ostrovok_postgres
+    environment:
+      POSTGRES_USER: ostrovok_user
+      POSTGRES_PASSWORD: super_secret_password
+      POSTGRES_DB: ostrovok_travel
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  cache_redis:
+    image: redis:7-alpine
+    container_name: ostrovok_redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+```
