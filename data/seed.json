@@ -1,0 +1,46 @@
+{
+ "hotels":[
+  {"id":1,"name":"Линия прибоя","city":"Сочи","area":"Центр","lat":43.5791,"lon":39.7205,"description":"Демонстрационный отель у городской набережной с тихими номерами.","image":"","price":6100},
+  {"id":2,"name":"Особняк у парка","city":"Сочи","area":"Центр","lat":43.5842,"lon":39.7233,"description":"Демонстрационный бутик-отель с историческим характером.","image":"","price":8500},
+  {"id":3,"name":"Морская терраса","city":"Сочи","area":"Хоста","lat":43.5157,"lon":39.8658,"description":"Демонстрационный отель с террасой и окнами на запад.","image":"","price":7900},
+  {"id":4,"name":"Зелёный квартал","city":"Сочи","area":"Адлер","lat":43.4268,"lon":39.9254,"description":"Демонстрационное проживание для гостей с животными.","image":"","price":4700},
+  {"id":5,"name":"Городской ритм","city":"Сочи","area":"Центр","lat":43.596,"lon":39.725,"description":"Демонстрационный городской отель с доступным тарифом.","image":"","price":3900},
+  {"id":6,"name":"Панорама Сочи","city":"Сочи","area":"Центр","lat":43.572,"lon":39.73,"description":"Демонстрационный отель с панорамным видом и номерами на высоких этажах.","image":"","price":9900}
+ ],
+ "landmarks":[{"id":1,"name":"Берег Чёрного моря, центральная точка","category":"water","lat":43.5738,"lon":39.7149},{"id":2,"name":"Берег в Хосте","category":"water","lat":43.5140,"lon":39.8635},{"id":3,"name":"Берег Адлера","category":"water","lat":43.4215,"lon":39.9202}],
+ "definitions":[
+  {"key":"quiet","label":"Тихий номер","description":"Подтверждена тихая обстановка","kind":"boolean"},
+  {"key":"window_direction","label":"Ориентация окон","description":"Сторона света: west, east, south, north","kind":"direction"},
+  {"key":"pets_allowed","label":"Можно с питомцем","description":"Допускаются животные","kind":"boolean"},
+  {"key":"pet_max_kg","label":"Максимальный вес животного","description":"Допустимый вес в килограммах","kind":"number"},
+  {"key":"pet_fee_rub","label":"Доплата за питомца","description":"Сумма в рублях","kind":"number"},
+  {"key":"soundproof","label":"Шумоизоляция","description":"Подтверждённая шумоизоляция","kind":"boolean"},
+  {"key":"roof_terrace","label":"Терраса","description":"Наличие террасы на крыше","kind":"boolean"},
+  {"key":"building_history","label":"История здания","description":"История и прежнее назначение здания","kind":"text"},
+  {"key":"water_distance_m","label":"Расстояние до воды","description":"В метрах по прямой между координатами","kind":"number"},
+  {"key":"construction_noise","label":"Строительные работы","description":"Известные строительные работы по соседству","kind":"text"}
+ ],
+ "facts":[
+  {"hotel_id":1,"feature":"quiet","value":true,"source":"demo:hotel-description","confidence":0.72,"observed_at":"2026-10-20"},
+  {"hotel_id":1,"feature":"window_direction","value":"west","source":"demo:room-plan","confidence":0.82,"observed_at":"2026-10-20"},
+  {"hotel_id":1,"feature":"pets_allowed","value":false,"source":"demo:policy","confidence":0.84,"observed_at":"2026-10-20"},
+  {"hotel_id":2,"feature":"building_history","value":"Стилизованный особняк начала XX века (демосценарий)","source":"demo:architectural-note","confidence":0.7,"observed_at":"2026-10-20"},
+  {"hotel_id":2,"feature":"quiet","value":true,"source":"demo:hotel-description","confidence":0.72,"observed_at":"2026-10-20"},
+  {"hotel_id":3,"feature":"roof_terrace","value":true,"source":"demo:hotel-description","confidence":0.88,"observed_at":"2026-10-20"},
+  {"hotel_id":3,"feature":"window_direction","value":"west","source":"demo:room-plan","confidence":0.88,"observed_at":"2026-10-20"},
+  {"hotel_id":3,"feature":"quiet","value":true,"source":"demo:hotel-description","confidence":0.74,"observed_at":"2026-10-20"},
+  {"hotel_id":4,"feature":"pets_allowed","value":true,"source":"demo:policy","confidence":0.91,"observed_at":"2026-10-20"},
+  {"hotel_id":4,"feature":"pet_max_kg","value":12,"source":"demo:policy","confidence":0.83,"observed_at":"2026-10-20"},
+  {"hotel_id":4,"feature":"pet_fee_rub","value":500,"source":"demo:policy","confidence":0.86,"observed_at":"2026-10-20"},
+  {"hotel_id":5,"feature":"quiet","value":false,"source":"demo:description","confidence":0.66,"observed_at":"2026-10-20"},
+  {"hotel_id":6,"feature":"window_direction","value":"west","source":"demo:room-plan","confidence":0.92,"observed_at":"2026-10-20"},
+  {"hotel_id":6,"feature":"construction_noise","value":"Требуется запрос в городской реестр","source":"demo:pending","confidence":0.25,"observed_at":"2026-10-20"}
+ ],
+ "questions":[
+  {"hotel_id":1,"feature":"soundproof","text":"Предусмотрена ли шумоизоляция в номерах?"},
+  {"hotel_id":2,"feature":"pets_allowed","text":"Можно ли остановиться с собакой или кошкой?"},
+  {"hotel_id":3,"feature":"pet_fee_rub","text":"Сколько стоит размещение с питомцем?"},
+  {"hotel_id":4,"feature":"window_direction","text":"На какую сторону выходят окна номеров?"},
+  {"hotel_id":6,"feature":"quiet","text":"Насколько тихо в номерах, обращённых к улице?"}
+ ]
+}

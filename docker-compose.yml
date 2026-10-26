@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      APP_ENV: development
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      HOTELIER_API_KEY: ${HOTELIER_API_KEY:-}
+    volumes:
+      - ./data:/srv/data
